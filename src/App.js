@@ -1,39 +1,114 @@
 import React from 'react';
 import './App.css';
-
+import cslx from 'cslx';
 
 function App() {
+  const styles = {
+    wrapper: {
+      minHeight: '100vh',
+      backgroundColor: '#f9fafb',
+      fontFamily: 'sans-serif',
+      color: '#111827'
+    },
+    header: {
+      backgroundColor: '#ffffff',
+      boxShadow: '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+      height: '64px',
+      display: 'flex',
+      alignItems: 'center'
+    },
+    nav: {
+      maxWidth: '80rem',
+      margin: '0 auto',
+      padding: '0 1rem',
+      width: '100%',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    },
+    logo: {
+      fontSize: '1.5rem',
+      fontWeight: 'bold',
+      color: '#4f46e5',
+      letterSpacing: '-0.025em'
+    },
+    main: {
+      maxWidth: '80rem',
+      margin: '0 auto',
+      padding: '4rem 1rem',
+      textAlign: 'center'
+    },
+    heading: {
+      fontSize: '2.5rem',
+      fontWeight: 800,
+      lineHeight: 1.2,
+      marginBottom: '1rem'
+    },
+    accentText: {
+      color: '#4f46e5'
+    },
+    description: {
+      marginTop: '0.75rem',
+      maxWidth: '32rem',
+      margin: '0 auto',
+      fontSize: '1.125rem',
+      color: '#6b7280',
+      lineHeight: 1.5
+    },
+    ctaContainer: {
+      marginTop: '2.5rem',
+      display: 'flex',
+      justifyContent: 'center'
+    },
+    button: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '0.75rem 2rem',
+      fontSize: '1.125rem',
+      fontWeight: 500,
+      borderRadius: '0.375rem',
+      color: '#ffffff',
+      backgroundColor: '#4f46e5',
+      textDecoration: 'none',
+      transition: 'background-color 0.2s',
+      boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)'
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 font-sans">
+    <div style={styles.wrapper}>
       {/* Header / Logo Section */}
-      <header className="bg-white shadow-sm">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-indigo-600 tracking-tight">
-              Pointrr
+      <header style={styles.header}>
+        <nav style={styles.nav}>
+          <div style={{ flexShrink: 0 }}>
+            <span style={styles.logo}>
+              PROJ_LOGO
             </span>
           </div>
         </nav>
       </header>
 
+
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-            Add a demo subdomain to show your aws server works using <span className="text-indigo-600">SSL</span>
+      <main style={styles.main}>
+        <div>
+          <h1 style={styles.heading}>
+            Streamline your <span style={styles.accentText}>Workflow</span>
           </h1>
-          <p className="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-            Sometimes using Ngrok (Tunnel) is not allowed at school (or work).  
-          Point your project at Your-Project-App.Pointrr.dev today!
-	   </p>
+          <p style={styles.description}>
+            An efficient way to manage your data and scale your services. 
+            Join our community to get started today.
+          </p>
 
           {/* Call to Action */}
-          <div className="mt-10 flex justify-center">
+          <div style={styles.ctaContainer}>
             <a
               href="https://docs.google.com/forms/your-google-doc-link-here"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10 transition-colors shadow-lg"
+              className={clsx('signup-button')} 
+              style={styles.button}
             >
               Sign Up
             </a>
